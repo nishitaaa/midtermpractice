@@ -3,7 +3,7 @@ from slackclient import SlackClient
 
 
 # CPS-847-Bot Slack
-Bot_User_OAuth_Access_Token = 'xoxb-970174070356-972818530151-us3bwmDltlCNS7Xw2oh8cEXE'
+Bot_User_OAuth_Access_Token = 'none'
 SLACK_API_TOKEN = Bot_User_OAuth_Access_Token
 
 # Hardcoded SLACK_API_TOKEN
@@ -26,9 +26,9 @@ def spongebob(data):
 def say_hello(data):
     if 'text' in data and 'user' in data:
         if data[text].endswith("?"):
-        channel_id = data['channel']
-        thread_ts = data['ts']
-        user = data['user']
+            channel_id = data['channel']
+            thread_ts = data['ts']
+            user = data['user']
 
         client.api_call('chat.postMessage',
             channel=channel_id,
